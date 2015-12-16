@@ -1,6 +1,6 @@
 # Heroku Connect Sample - Account Change
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://ggithub.com/satyapusuluri/HerokuAccountCreate)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/satyapusuluri/HerokuAccountCreate)
 
 # Local Dev
 
