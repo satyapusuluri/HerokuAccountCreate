@@ -14,21 +14,23 @@
     </style>
     <script>
         $(function() {
-            $("#phoneChangerForm").submit(function(event) {
+            $("#AccountChangerForm").submit(function(event) {
                 event.preventDefault();
 
-                var errorMessage = $("#errorMessage");
-                var error = $("#error");
-                error.hide();
-
-                $("#message").hide();
-
-                var firstName = $("#firstName").val();
-                var lastName = $("#lastName").val();
-                var email = $("#email").val();
+                var errorMessage = $("#errorMessage");		 
+                var error = $("#error");                     
+                error.hide();                                
+                                                             
+                $("#message").hide();                        
+                                                             
+                var AccountName = $("#AccountName").val();
+                var BillingCity = $("#BillingCity").val();
+                var BillingCountry = $("#BillingCountry").val();
+                var BillingState = $("#BillingState").val();
+                var BillingStreet = $("#BillingStreet").val();
                 var phone = $("#phone").val();
 
-                if (firstName.length == 0 || lastName.length == 0 || email.length == 0 || phone.length == 0) {
+                if (AccountName.length == 0 || BillingCity.length == 0 || BillingCountry.length == 0 || BillingState.length == 0 || BillingStreet.length == 0 || phone.length == 0) {
                     errorMessage.text("All of the fields are required.");
                     error.show();
                 }
@@ -37,17 +39,21 @@
                         url: event.target.action,
                         method: event.target.method,
                         data: JSON.stringify({
-                            firstName: firstName,
-                            lastName: lastName,
-                            email: email,
+                            AccountName: AccountName,
+                            BillingCity: BillingCity,
+                            BillingCountry: BillingCountry,
+                            BillingState: BillingState,
+                            BillingStreet: BillingStreet,
                             phone: phone
                         }),
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         success: function(data) {
-                            $("#firstName").val("");
-                            $("#lastName").val("");
-                            $("#email").val("");
+                            $("#AccountName").val("");
+                            $("#BillingCity").val("");
+                            $("#BillingCountry").val("");
+                            $("#BillingState").val("");
+                            $("#BillingStreet").val("");
                             $("#phone").val("");
                             $("#messageMessage").text("Record updated!");
                             $("#message").show();
@@ -67,29 +73,37 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Phone Number Changer</a>
+                <a class="navbar-brand" href="/">Account Change</a>
             </div>
         </div>
     </nav>
-
+	
     <div class="container">
-        <form id="phoneChangerForm" action="/update" method="post" style="width: 400px">
+        <form id="AccountChangerForm" action="/update" method="post" style="width: 400px">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Update Your Phone Number</h3>
+                    <h3 class="panel-title">Update Your Account Details</h3>
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="For verification" required>
+                        <label for="AccountName">Account Name</label>
+                        <input type="text" class="form-control" id="AccountName" placeholder="For verification" required>
                     </div>
                     <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="For verification" required>
+                        <label for="BillingCity">BillingCity</label>
+                        <input type="text" class="form-control" id="BillingCity" placeholder="For verification" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="For verification" required>
+                        <label for="BillingCountry">BillingCountry</label>
+                        <input type="text" class="form-control" id="BillingCountry" placeholder="For verification" required>
+                    </div>
+					<div class="form-group">
+                        <label for="BillingState">BillingState</label>
+                        <input type="text" class="form-control" id="BillingState" placeholder="For verification" required>
+                    </div>
+					<div class="form-group">
+                        <label for="BillingStreet">BillingStreet</label>
+                        <input type="text" class="form-control" id="BillingStreet" placeholder="For verification" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
@@ -106,7 +120,7 @@
                         <span class="sr-only">Error:</span>
                         <span id="errorMessage"></span>
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Phone Number</button>
+                    <button type="submit" class="btn btn-primary">Update Account Details</button>
                 </div>
             </div>
         </form>
