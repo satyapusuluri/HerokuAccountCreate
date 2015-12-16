@@ -1,7 +1,7 @@
 {
-  "name": "Phone Change",
-  "description": "Heroku Connect Sample App - Phone Change",
-  "repository": "https://github.com/jamesward/heroku-connect-phone-change",
+  "name": "Account Change",
+  "description": "Heroku Connect Sample App - Account Change",
+  "repository": "https://github.com/satyapusuluri/HerokuAccountCreate",
   "success_url": "/setup.html",
   "env": {
     "PGSSLMODE": {
